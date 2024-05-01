@@ -6,7 +6,7 @@ import Main from "./main"
 function App() {
     return (
             <Fragment>
-                <Header />
+                <Header buttonName="sn" />
                 <Main/>
             </Fragment>);
     }

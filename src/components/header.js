@@ -2,7 +2,7 @@ import React from "react";
 
 import "../styles/header.css";
 
-function Header() { 
+function Header(props) { 
 	let btnClass="btn";
 	let [count, setNewCount] = React.useState(0)
 	let clickbtn = ()=> {
@@ -11,7 +11,7 @@ function Header() {
 	return(
 		<header> 
 			<h1>its header</h1>
-			<button className={btnClass} onClick={clickbtn}>btn {count}</button>
+			<button className={btnClass} onClick={clickbtn}>{props.buttonName} {count}</button>
 		</header>
 	)
 }
