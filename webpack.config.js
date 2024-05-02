@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const devMode = process.argv[process.argv.indexOf('--mode') + 1] === 'development';
 
 module.exports={
-    entry: path.resolve(__dirname, 'src', 'index.js'),
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
+    devtool: 'source-map',
     output:{
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
@@ -17,10 +18,10 @@ module.exports={
     module: {
         rules:[
             {
-                test: /\.js$/,
+                test: /\.(ts|tsx)$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader"
+                    loader: "awesome-typescript-loader"
                 }
             },
             {
