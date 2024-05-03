@@ -15,13 +15,16 @@ module.exports={
             template: path.resolve(__dirname, "src", "index.html")
         }),
     ],
+    resolve:{
+        extensions: [".js", ".jsx", ".jsonx", ".ts", ".tsx"]
+    },
     module: {
         rules:[
             {
                 test: /\.(ts|tsx)$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "awesome-typescript-loader"
+                    loader: "ts-loader"
                 }
             },
             {

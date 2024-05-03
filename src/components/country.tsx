@@ -1,16 +1,15 @@
-import React from "react"
+import * as React from "react"
 import PropTypes from "prop-types"
 
 function Country(props){
     return(
     <tr>
-        <td>{props.country.name.common}</td>
-		<td>{props.country.capital}</td>
+        <td>{props.name.common}</td>
+		<td>{props.capital}</td>
     </tr>
     )
 }
-
-Country.propTypes = {
-    country: PropTypes.object
+Country.defaultProps  = {
+    capital: "not Available"
 };
 export default Country
